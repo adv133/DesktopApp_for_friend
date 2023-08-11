@@ -37,7 +37,7 @@ class Form(QMainWindow):
 
         self.resize(740, 300)
         self.setWindowTitle("Comrade")
-        self.setWindowIcon(QIcon("./images/background.png"))
+        self.setWindowIcon(QIcon("./images/background.ico"))
         self.setStyleSheet('.QWidget {border-image: url(./images/back_flag.svg) 0 0 0 0 stretch stretch;}')
 
         self.directory_path = ""
@@ -54,7 +54,7 @@ class Form(QMainWindow):
         filename, filetype = QFileDialog.getOpenFileName(self,
                                                          "Select file",
                                                          ".",
-                                                         "All Files(*)")
+                                                         "Excel File (*.xlsx *.xls)")
         if filename != '':
             self.plainTextEdit.appendHtml("<br>File was selected: <b>{}</b>"
                                           "".format(filename, filetype))
