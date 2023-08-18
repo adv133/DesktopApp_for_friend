@@ -69,7 +69,7 @@ class Form(QMainWindow):
         with os.scandir(self.directory_path) as files:
             list_of_files = [file.path for file in files if file.is_file() if file.path[-5:] == ".xlsx"]
 
-        self.common_dataframe = (pd.concat([pd.read_excel(file_path) for file_path in list_of_files],
+        self.common_dataframe = (pd.concat([pd.read_excel(file_path,header = 1) for file_path in list_of_files],
                                            ignore_index=True))
 
         if self.file_path == '':
